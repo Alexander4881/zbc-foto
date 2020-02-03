@@ -46,7 +46,9 @@ navigator.mediaDevices.getUserMedia({
         };
     })
     .catch(function (err) {
-        console.log(err.name + ": " + err.message + ": " + err.stack);
+        var errorMessage = `${err.name} : ${err.message}`;
+        alertService(String(errorMessage));
+        // console.log(errorMessage);
     });
 
 

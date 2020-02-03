@@ -18,14 +18,13 @@ $(screenshotButton).click(function () {
 
       } else {
         // TODO make a error service thingy Tobias ;)
-        console.log(response);
+        alertService(response);
+        // console.log(response);
       }
 
     })
     .fail(function (error) {
-      alert("error." + error);
-      console.log(error);
-
+      alertService(error);
+      // console.log(error);
     });
 });
-
