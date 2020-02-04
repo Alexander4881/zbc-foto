@@ -1,4 +1,4 @@
-const screenshotButton = document.querySelector('#screenshot-button');
+const takePictureButton = document.querySelector('#take-picture-button');
 const video = document.querySelector('#screenshot video');
 const img = document.querySelector('#image img');
 
@@ -53,7 +53,7 @@ navigator.mediaDevices.getUserMedia({
 
 
 const canvas = document.createElement('canvas');
-screenshotButton.onclick = video.onclick = function () {
+takePictureButton.onclick = video.onclick = function () {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0);

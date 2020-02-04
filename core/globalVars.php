@@ -8,6 +8,10 @@ if (session_status() !== PHP_SESSION_ACTIVE)
     session_start();
 }
 
+if (isset($_SESSION['alertMessage']) || !isset($_SESSION['alertMessage'])) {
+    $_SESSION['alertMessage'] = "";
+}
+
 if(!isset($_SESSION['tempPhotoId'])){
     $_SESSION['tempPhotoId'] = "alfa";
 }

@@ -1,6 +1,6 @@
 // Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
-$(screenshotButton).click(function () {
+$(takePictureButton).click(function () {
   $.ajax({
       type: "POST",
       url: "core/post.php",
@@ -12,19 +12,19 @@ $(screenshotButton).click(function () {
       if (response.includes(".jpeg")) {
         $(img).attr("src", response);
         
-        console.log(response);
+        alertService("Success : Dit billede er midlertidig gemt.");
 
         ShowTempImage();
 
       } else {
         // TODO make a error service thingy Tobias ;)
-        alertService(response);
+        alertService("Fejl: Billede er ikke den rigtige format.");
         // console.log(response);
       }
 
     })
-    .fail(function (error) {
-      alertService(error);
+    .fail(function () {
+      alertService("Server Fejl: Kunne ikke håndtere oprettelse af billede.");
       // console.log(error);
     });
 });

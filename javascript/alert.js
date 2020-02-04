@@ -6,7 +6,11 @@ function alertService( message ) {
             "alert": message
         }
     }).done( function( response ) {
-        console.info( `Alert Service Data Saved : ${response}` ); 
+        if (response == "") {
+            console.info("Alert Response is empty.");
+            return;
+        }
+        console.log(response);
     }).fail( function( xhr, textStatus, errorThrown ) {
         console.error( `Alert Service Data Error | Status: ${xhr.statusText} { ${textStatus} ~ ${errorThrown} }` );
     });

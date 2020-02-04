@@ -32,38 +32,32 @@
 
             if (!empty($_SESSION['alertMessage'])) {
                 echo '<div class="alert alert-primary" role="alert">';
-                    echo "Fejl: " . $_SESSION['alertMessage'];
+                    echo $_SESSION['alertMessage'];
                 echo '</div>';
             }
         ?>
 
         <!-- Image Elements Container -->
         <div class="row">
-            <div class="col">
+            <div class="col-3">
 
             </div>
 
-            <div class="col">
-                <div id="elements" class="img-canvas">
+            <div id="elements" class="col-6">
+                <!-- Preparing Picture Taking | Video by WebCam -->
+                <div id="screenshot" class="videoWrapper mx-auto text-center">
+                    <video class="videostream" autoplay="">
 
-                    <!-- Preparing Picture Taking | Video by WebCam -->
-                    <div id="screenshot" style="text-align:center;">
-                        <video class="videostream" autoplay=""></video>
-                    </div>
+                    </video>
+                </div>
 
-                    <!-- Save Picture if Choosed -->
-                    <div id="save-image">
-
-                    </div>
-
-                    <!-- Temp Image Container -->
-                    <div id="image">
-                        <img src="">
-                    </div>
+                <!-- Temp Image Container -->
+                <div id="image" class="videoWrapper mx-auto text-center hide">
+                    <img src="">
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col-3">
 
             </div>
         </div>
@@ -71,18 +65,18 @@
         <!-- Buttons Container -->
         <div class="row mt-3">
             <div class="col">
-                <div class="row">
+                <div id="containers" class="row mx-auto text-center">
 
-                    <div class="col-lg-12 col-md-8 col-sm-6 mb-3">
+                    <div id="save-picture-container" class="col-lg-12 col-md-8 col-sm-6 mb-3 hide">
                         <div class="row justify-content-center">
-                            <div class="col-4">
-                                <!-- <label for="validationServer01">CPR-Nummber</label> -->
-                                <div class="input-group input-group-lg">
+                            <div class="col-6">
+                                <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="inputGroupCprNumber">@</span>
                                     </div>
                                     <input type="text" class="form-control" id="validationServerCprNumber"
-                                        placeholder="CPR-Nummer" aria-describedby="inputGroupCprNumber" maxlength="10" required>
+                                        placeholder="CPR-Nummer" aria-describedby="inputGroupCprNumber" maxlength="10"
+                                        required>
                                     <div class="invalid-feedback">
                                         Venligst udfyld cpr-nummer.
                                     </div>
@@ -91,32 +85,47 @@
                                     </div>
                                 </div>
 
-                                <button id="save-image-button" type="button"
-                                    class="btn btn-primary btn-lg btn-block mt-2">Gem
-                                    Billede</button>
+                                <button id="save-picture-button" type="button" class="btn btn-success btn-block mt-2">
+                                    <i class="fas fa-save"></i>
+                                    Gem Billede
+                                </button>
                             </div>
                         </div>
-
                     </div>
 
-                    <div class="col-lg-12 col-md-8 col-sm-6 mb-3 hide">
-                        <!-- Take New Picture -->
-                        <button id="take-new-image-button" type="button" class="btn btn-secondary btn-lg mx-2">Tag Nyt
-                            Billede</button>
+                    <div id="controls-picture-container" class="col-lg-12 col-md-8 col-sm-6 mb-3 hide">
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button id="use-picture-button" type="button" class="btn btn-primary btn-block">
+                                            <i class="fas fa-images"></i>
+                                            Brug Billede
+                                        </button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button id="discard-picture-button" type="button"
+                                            class="btn btn-danger btn-block">
+                                            <i class="fas fa-recycle"></i>
+                                            Kassere Billedet
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-lg-12 col-md-8 col-sm-6 mb-3 hide">
+                    <div id="take-picture-container" class="col-lg-12 col-md-8 col-sm-6 mb-3">
                         <!-- Take Picture of Current View -->
-                        <button id="screenshot-button" type="button" class="btn btn-secondary btn-lg mx-2">Tag
-                            Billede</button>
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <button id="take-picture-button" type="button" class="btn btn-primary btn-block">
+                                    <i class="fas fa-camera"></i>
+                                    Tag Billede
+                                </button>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="col-lg-12 col-md-8 col-sm-6 mb-3 hide">
-                        <!-- Use Current Taken Picture -->
-                        <button id="use-image-button" type="button" class="btn btn-secondary btn-lg mx-2">Brug
-                            Billede</button>
-                    </div>
-
                 </div>
             </div>
         </div>
