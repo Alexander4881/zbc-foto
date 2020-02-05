@@ -15,7 +15,11 @@ $("#use-image-button").click(function(){
 // will show the take picture button again.
 $("#discard-picture-button").click(function(){
     alertService("Success : Kasseret Billedet.");
-    ShowVideo();
+    ChangeContainerState($("#take-picture-container"), true);
+    ChangeContainerState($("#controls-picture-container"), false);
+    ChangeContainerState($("#screenshot"), true);
+    ChangeContainerState($("#image"), false);
+    ChangeContainerState($("#take-picture-container"), true);
 });
 
 // Click Function,
@@ -25,57 +29,38 @@ $("#discard-picture-button").click(function(){
 $("#take-picture-button").click(function() {
     alertService("Success : Billedet Blev Taget.");
     ChangeContainerState($("#take-picture-container"), false);
-    ShowPictureControls();
+    ChangeContainerState($("#image"), true);
+    ChangeContainerState($("#screenshot"), false);
+    ChangeContainerState($("#controls-picture-container"), true);
 });
 
-function ShowPictureControls() {
-    ChangeContainerState($("#controls-picture-container"), true);
-}
+// Click Fuction
+// On click of Brug Billed
+// will show the #save-picture-container div
+$("#use-picture-button").click(function(){
+    alertService("Billedet er nu i brug.");
+    ChangeContainerState($("#controls-picture-container"), false);
+    ChangeContainerState($("#save-picture-container"), true);
+});
 
-// show the kamera
-function ShowVideo() {
-    ChangeElementState($("#screenshot"));
-}
+// Click Function
+// On Click of Beskær Billed
+// Will show #edit-picture-container
+$('#edit-picture-button').click(function() {
+    alertService("Rediger billed.");
+    ChangeContainerState($("#controls-picture-container"), false);
+    ChangeContainerState($("#edit-picture-container"), true);
+});
 
-// show the image om the server
-function ShowTempImage() {
-    ChangeElementState($("#use-image"),$("#image"));
-}
-
-// Show Save Image changes
-function ShowSaveImage() {
-    ChangeElementState($("#save-image"));
-    $("#use-image img").addClass("show");
-}
-
+// remove hide class or add show class
 function ChangeContainerState(container, state) {
     console.info(`Changed State of ${container} to ${Boolean(state)}.`);
     if (Boolean(state) === true) {
         $(container).addClass("show");
+        $(container).removeClass("hide");
     }
     if (Boolean(state) === false) {
         $(container).addClass("hide");
+        $(container).removeClass("show");
     }
-}
-
-// compress function
-function ChangeElementState(element1, element2){
-    ResetAllElements();
-    HideAllElements();
-    $(element1).addClass("show");
-    $(element2).addClass("show");
-}
-
-// remove all show hide classes
-function ResetAllElements() {
-    elements.each(function(){
-        $(this).removeClass("hide");
-        $(this).removeClass("show");
-    });
-}
-
-function HideAllElements(){
-    elements.each(function(){
-        $(this).addClass("hide");
-    });
 }

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="./css/cropper.min.css" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/bf91a5a0c2.js" crossorigin="anonymous"></script>
 </head>
@@ -21,7 +22,7 @@
         <div class="row">
             <div class="col">
                 <div id="img-container">
-                    <img id="logo" src="./assets/ZBC.jpg" class="mx-auto d-block" alt="ZBC Logo">
+                    <!-- <img id="logo" src="./assets/ZBC.jpg" class="mx-auto d-block" alt="ZBC Logo"> -->
                 </div>
             </div>
         </div>
@@ -39,10 +40,6 @@
 
         <!-- Image Elements Container -->
         <div class="row">
-            <div class="col-3">
-
-            </div>
-
             <div id="elements" class="col-6">
                 <!-- Preparing Picture Taking | Video by WebCam -->
                 <div id="screenshot" class="videoWrapper mx-auto text-center">
@@ -53,12 +50,27 @@
 
                 <!-- Temp Image Container -->
                 <div id="image" class="videoWrapper mx-auto text-center hide">
-                    <img src="">
+                    <img id="cropperImg" src="">
                 </div>
             </div>
 
-            <div class="col-3">
-
+            <div class="col-6">
+                <div class="card justify-content-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Medarbejder Status</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            <strong>ZBC</strong>
+                            <strong>Z</strong>ealand
+                            <strong>B</strong>usiness
+                            <strong>C</strong>ollege
+                        </h6>
+                        <div class="row">
+                        <div class="col col-3">
+                            <div class="preview"></div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -74,7 +86,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="inputGroupCprNumber">@</span>
                                     </div>
-                                    <input type="text" class="form-control" id="validationServerCprNumber"
+                                    <input type="text" class="form-control is-invalid" id="validationServerCprNumber"
                                         placeholder="CPR-Nummer" aria-describedby="inputGroupCprNumber" maxlength="10"
                                         required>
                                     <div class="invalid-feedback">
@@ -85,7 +97,8 @@
                                     </div>
                                 </div>
 
-                                <button id="save-picture-button" type="button" class="btn btn-success btn-block mt-2">
+                                <button id="save-picture-button" disabled type="button"
+                                    class="btn btn-success btn-block mt-2">
                                     <i class="fas fa-save"></i>
                                     Gem Billede
                                 </button>
@@ -97,13 +110,20 @@
                         <div class="row justify-content-center">
                             <div class="col-6">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <button id="use-picture-button" type="button" class="btn btn-primary btn-block">
                                             <i class="fas fa-images"></i>
                                             Brug Billede
                                         </button>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
+                                        <button id="edit-picture-button" type="button"
+                                            class="btn btn-primary btn-block">
+                                            <i class="fas fa-images"></i>
+                                            Beskær Billed
+                                        </button>
+                                    </div>
+                                    <div class="col-4">
                                         <button id="discard-picture-button" type="button"
                                             class="btn btn-danger btn-block">
                                             <i class="fas fa-recycle"></i>
@@ -111,6 +131,18 @@
                                         </button>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="edit-picture-container" class="col-lg-12 col-md-8 col-sm-6 mb-3 hide">
+                        <!-- Take Picture of Current View -->
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <button id="use-edited-picture-button" type="button" class="btn btn-primary btn-block">
+                                    <i class="fas fa-camera"></i>
+                                    brug billed
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -165,6 +197,7 @@
     <script src="./javascript/onClickFunctions.js"></script>
     <script src="./javascript/alert.js"></script>
     <script src="./javascript/inputValidation.js"></script>
+    <script type="module" src="./javascript/cropperTest.js"></script>
 
 </body>
 

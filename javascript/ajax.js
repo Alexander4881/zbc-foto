@@ -1,6 +1,6 @@
 // Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
-$(takePictureButton).click(function () {
+$('#use-picture-button').click(function () {
   $.ajax({
       type: "POST",
       url: "core/post.php",
@@ -11,13 +11,11 @@ $(takePictureButton).click(function () {
 
       if (response.includes(".jpeg")) {
         $(img).attr("src", response);
+        console.log(response);
         
         alertService("Success : Dit billede er midlertidig gemt.");
 
-        ShowTempImage();
-
       } else {
-        // TODO make a error service thingy Tobias ;)
         alertService("Fejl: Billede er ikke den rigtige format.");
         // console.log(response);
       }

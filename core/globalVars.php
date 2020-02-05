@@ -1,6 +1,6 @@
 <?php  
 $tempImageFolder = "../temp/";
-$finalImageDestinationFolder = "//DESKTOP-FGEE3SE/SharedImage/";
+$finalImageDestinationFolder = "C:\SharedImage";
 
 
 if (session_status() !== PHP_SESSION_ACTIVE) 

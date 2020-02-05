@@ -57,4 +57,12 @@ takePictureButton.onclick = video.onclick = function () {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0);
+    $('#cropperImg').attr('src', canvas.toDataURL('image/webp'));
+    $(img).trigger('ready');
 };
+
+// todo fiks first loaded image
+// todo fiks image border show full image
+// todo check upload renaming of file on server
+// todo css nedds to be pritty
+// todo unitest.......

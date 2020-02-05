@@ -17,7 +17,12 @@ $_SESSION['tempFileName'] = $tempImageFolder . $_SESSION['tempPhotoId'] . '.jpeg
 
 
 if (isset($_POST["photo"])) {
-    $imageBase64String = str_replace('data:image/webp;base64,', '', $_POST["photo"]);
+    if(strpos($_POST["photo"],"data:image/webp;base64") !== false){
+        $imageBase64String = str_replace('data:image/webp;base64,', '', $_POST["photo"]);
+    }
+    else if(strpos($_POST["photo"],"data:image/png;base64") !==false){
+        $imageBase64String = str_replace('data:image/png;base64,', '', $_POST["photo"]);
+    }
 
     $imageBase64String = base64_decode($imageBase64String);
 
