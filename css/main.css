@@ -28,7 +28,7 @@
     overflow: hidden;
 }
 
-.videoWrapper {
+/* .videoWrapper {
     width: 343px;
     height: 454px;
     border-radius: 10px;
@@ -40,7 +40,7 @@
     width: 343px;
     height: 454px;
     object-fit: cover;
-}
+} */
 
 @supports (-ms-ime-align:auto) {  
     .videoWrapper {

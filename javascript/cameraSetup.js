@@ -1,6 +1,7 @@
 const takePictureButton = document.querySelector('#take-picture-button');
 const video = document.querySelector('#screenshot video');
 const img = document.querySelector('#image img');
+const croppedImg = document.querySelector('#croppedImage img');
 
 // Older browsers might not implement mediaDevices at all, so we set an empty object first
 if (navigator.mediaDevices === undefined) {

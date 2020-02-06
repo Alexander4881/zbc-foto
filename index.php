@@ -32,26 +32,66 @@
         <!-- Image Elements Container -->
         <div class="row mt-1">
 
-            <div class="col-3"></div>
+            <!-- <div class="col-3"></div> -->
 
-            <div id="elements" class="col-6">
+            <div id="elements" class="col-8">
                 <!-- Preparing Picture Taking | Video by WebCam -->
-                <div id="screenshot" class="videoWrapper mx-auto text-center">
+                <div id="screenshot">
                     <video class="videostream" autoplay="">
 
                     </video>
                 </div>
 
                 <!-- Temp Image Container -->
-                <div id="image" class="videoWrapper mx-auto text-center hide">
+                <div id="image" class="hide">
                     <img id="cropperImg" src="">
                 </div>
             </div>
 
-            <div class="col-3">
+            <div class="col-4">
                 <div id="preview-card" class="card justify-content-center hide">
                     <div class="card-body">
-                        <h5 class="card-title">Medarbejder Status</h5>
+
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="text-center">
+                                    <h5 class="card-title">
+                                        Studiekort
+                                    </h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        <strong>ZBC</strong>
+                                        <strong>R</strong>ingsted
+                                    </h6>
+                                </div>
+
+                                <hr>
+
+                                <p class="card-text">
+                                    Preview Studiekort
+                                </p>
+
+                                <p class="card-text">
+                                    <small class="text-muted d-block">
+                                        Date of Birth : 01.01.1995
+                                    </small>
+                                    <small class="text-muted d-block">
+                                        Expirary Date : 11.10.2025
+                                    </small>
+                                </p>
+
+                            </div>
+
+                            <div class="col-4">
+
+                                <div class="mb-2">
+                                    <img src="./assets/zbc_black.jpg" class="card-img" alt="ZBC Preview Card Logo">
+                                </div>
+
+                                <div class="preview" style="width: 100%; height: auto;"></div>
+                            </div>
+                        </div>
+
+                        <!-- <h5 class="card-title">Medarbejder Status</h5>
                         <h6 class="card-subtitle mb-2 text-muted">
                             <strong>ZBC</strong>
                             <strong>Z</strong>ealand
@@ -62,8 +102,17 @@
                             <div class="col col-3">
                                 <div class="preview" style="width: 64px; height: 36px;"></div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cropped Image Container -->
+        <div class="row mt-1">
+            <div class="col-12">
+                <div id="croppedImage" class="mx-auto text-center hide">
+                    <img id="finalImage" src="">
                 </div>
             </div>
         </div>
@@ -94,7 +143,7 @@
                                 <button id="save-picture-button" disabled type="button"
                                     class="btn btn-success btn-block mt-2">
                                     <i class="fas fa-save"></i>
-                                    Gem Billede
+                                    Gem Billedet
                                 </button>
                             </div>
                         </div>
@@ -114,7 +163,7 @@
                                         <button id="edit-picture-button" type="button"
                                             class="btn btn-primary btn-block">
                                             <i class="fas fa-images"></i>
-                                            Beskær Billed
+                                            Beskær Billedet
                                         </button>
                                     </div>
                                     <div class="col-6">
@@ -135,7 +184,7 @@
                             <div class="col-6">
                                 <button id="use-edited-picture-button" type="button" class="btn btn-primary btn-block">
                                     <i class="fas fa-camera"></i>
-                                    brug billed
+                                    Brug Billedet
                                 </button>
                             </div>
                         </div>

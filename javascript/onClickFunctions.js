@@ -1,16 +1,19 @@
-import {instantiateCrop,cropper} from './cropperTest.js';
+import {
+    instantiateCrop,
+    cropper
+} from './cropperTest.js';
 
 // Click Function,
 // On click of use this picture button,
 // will show container for saving the choosen picture.
-$("#use-image-button").click(function(){
+$("#use-image-button").click(function () {
     ShowSaveImage();
 });
 
 // Click Function,
 // On click of choosen to discard the taken picture,
 // will show the take picture button again.
-$("#discard-picture-button").click(function(){
+$("#discard-picture-button").click(function () {
     alertService("Success : Kasseret Billedet.");
     ChangeContainerState($("#take-picture-container"), true);
     ChangeContainerState($("#controls-picture-container"), false);
@@ -23,7 +26,7 @@ $("#discard-picture-button").click(function(){
 // On click of take picture,
 // will show the controls of the current
 // taken picture.
-$("#take-picture-button").click(function() {
+$("#take-picture-button").click(function () {
     //insert the screenshot on the img element
     $('#cropperImg').attr('src', canvas.toDataURL('image/webp'));
     alertService("Success : Billedet Blev Taget.");
@@ -37,7 +40,7 @@ $("#take-picture-button").click(function() {
 // Click Fuction
 // On click of Brug Billed
 // will show the #save-picture-container div
-$("#use-picture-button").click(function(){
+$("#use-picture-button").click(function () {
     alertService("Billedet er nu i brug.");
     ChangeContainerState($("#controls-picture-container"), false);
     ChangeContainerState($("#save-picture-container"), true);
@@ -46,15 +49,15 @@ $("#use-picture-button").click(function(){
 // Click Function
 // On Click of Beskær Billed
 // Will show #edit-picture-container
-$('#edit-picture-button').click(function() {
-    alertService("Rediger billed.");
+$('#edit-picture-button').click(function () {
+    alertService("Redigere Billedet.");
     instantiateCrop();
     ChangeContainerState($("#preview-card"), true);
     ChangeContainerState($("#controls-picture-container"), false);
     ChangeContainerState($("#edit-picture-container"), true);
 });
 
-$('#use-edited-picture-button').click(function(){
+$('#use-edited-picture-button').click(function () {
     ChangeContainerState($("#preview-card"), false);
     uploadTempImage(cropper);
 
@@ -62,9 +65,11 @@ $('#use-edited-picture-button').click(function(){
     $('.cropper-hidden').removeClass('cropper-hidden');
     ChangeContainerState($("#save-picture-container"), true);
     ChangeContainerState($("#edit-picture-container"), false);
+    ChangeContainerState($("#croppedImage"), true);
+    ChangeContainerState($("#image"), false);
 });
 
-$('#save-picture-button').click(function(){
+$('#save-picture-button').click(function () {
     alertService('Success : Gemmer Billed...<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
     saveFinalImage($('#validationServerCprNumber').val());
 });

@@ -8,12 +8,12 @@ function uploadTempImage(cropper) {
         "photo": cropper.getCroppedCanvas({
           width: 343,
           height: 453
-        }).toDataURL("image/webp")
+        }).toDataURL("image/png")
       }
     }).done(function (response) {
 
-      if (response.includes(".jpeg")) {
-        $(img).attr("src", response);
+      if (response.includes(".jpg")) {
+        $(croppedImg).attr("src", response);        
         alertService("Success : Dit billede er midlertidig gemt.");
       } else {
         alertService("Fejl: Billede er ikke den rigtige format.");
@@ -34,7 +34,9 @@ function saveFinalImage(cprNummer) {
       }
     }).done(function (response) {
 
-      console.log(response);
+      setTimeout(function(){
+        location.reload();
+      },4000);
 
     })
     .fail(function () {
