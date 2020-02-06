@@ -1,15 +1,11 @@
 <?php  
 $tempImageFolder = "../temp/";
-$finalImageDestinationFolder = "C:\SharedImage";
+$finalImageDestinationFolder = "C:/SharedImage/";
 
 
 if (session_status() !== PHP_SESSION_ACTIVE) 
 {
     session_start();
-}
-
-if (isset($_SESSION['alertMessage']) || !isset($_SESSION['alertMessage'])) {
-    $_SESSION['alertMessage'] = "";
 }
 
 if(!isset($_SESSION['tempPhotoId'])){

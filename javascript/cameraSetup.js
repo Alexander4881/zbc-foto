@@ -48,7 +48,6 @@ navigator.mediaDevices.getUserMedia({
     .catch(function (err) {
         var errorMessage = `${err.name} : ${err.message}`;
         alertService(String(errorMessage));
-        // console.log(errorMessage);
     });
 
 
@@ -57,8 +56,6 @@ takePictureButton.onclick = video.onclick = function () {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0);
-    $('#cropperImg').attr('src', canvas.toDataURL('image/webp'));
-    $(img).trigger('ready');
 };
 
 // todo fiks first loaded image

@@ -1,7 +1,4 @@
-const elements = $("#elements").children();
-const containers = $("#containers").children();
-console.info(elements);
-console.info(containers);
+import {instantiateCrop,cropper} from './cropperTest.js';
 
 // Click Function,
 // On click of use this picture button,
@@ -27,7 +24,10 @@ $("#discard-picture-button").click(function(){
 // will show the controls of the current
 // taken picture.
 $("#take-picture-button").click(function() {
+    //insert the screenshot on the img element
+    $('#cropperImg').attr('src', canvas.toDataURL('image/webp'));
     alertService("Success : Billedet Blev Taget.");
+    ChangeContainerState($("#preview-card"), false);
     ChangeContainerState($("#take-picture-container"), false);
     ChangeContainerState($("#image"), true);
     ChangeContainerState($("#screenshot"), false);
@@ -48,8 +48,25 @@ $("#use-picture-button").click(function(){
 // Will show #edit-picture-container
 $('#edit-picture-button').click(function() {
     alertService("Rediger billed.");
+    instantiateCrop();
+    ChangeContainerState($("#preview-card"), true);
     ChangeContainerState($("#controls-picture-container"), false);
     ChangeContainerState($("#edit-picture-container"), true);
+});
+
+$('#use-edited-picture-button').click(function(){
+    ChangeContainerState($("#preview-card"), false);
+    uploadTempImage(cropper);
+
+    $('.cropper-container').remove();
+    $('.cropper-hidden').removeClass('cropper-hidden');
+    ChangeContainerState($("#save-picture-container"), true);
+    ChangeContainerState($("#edit-picture-container"), false);
+});
+
+$('#save-picture-button').click(function(){
+    alertService('Success : Gemmer Billed...<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
+    saveFinalImage($('#validationServerCprNumber').val());
 });
 
 // remove hide class or add show class

@@ -8,11 +8,10 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>ZBC | Foto</title>
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="./css/cropper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/cropper.min.css">
 
-    <script src="https://kit.fontawesome.com/bf91a5a0c2.js" crossorigin="anonymous"></script>
+    <script src="./javascript/bf91a5a0c2.js"></script>
 </head>
 
 <body>
@@ -22,24 +21,19 @@
         <div class="row">
             <div class="col">
                 <div id="img-container">
-                    <!-- <img id="logo" src="./assets/ZBC.jpg" class="mx-auto d-block" alt="ZBC Logo"> -->
+                    <img id="logo" src="./assets/ZBC.jpg" class="mx-auto d-block" alt="ZBC Logo">
                 </div>
             </div>
         </div>
 
         <!-- Alerts -->
-        <?php
-            session_start();
-
-            if (!empty($_SESSION['alertMessage'])) {
-                echo '<div class="alert alert-primary" role="alert">';
-                    echo $_SESSION['alertMessage'];
-                echo '</div>';
-            }
-        ?>
+        <span id="alert"></span>
 
         <!-- Image Elements Container -->
-        <div class="row">
+        <div class="row mt-1">
+
+            <div class="col-3"></div>
+
             <div id="elements" class="col-6">
                 <!-- Preparing Picture Taking | Video by WebCam -->
                 <div id="screenshot" class="videoWrapper mx-auto text-center">
@@ -54,8 +48,8 @@
                 </div>
             </div>
 
-            <div class="col-6">
-                <div class="card justify-content-center">
+            <div class="col-3">
+                <div id="preview-card" class="card justify-content-center hide">
                     <div class="card-body">
                         <h5 class="card-title">Medarbejder Status</h5>
                         <h6 class="card-subtitle mb-2 text-muted">
@@ -65,9 +59,9 @@
                             <strong>C</strong>ollege
                         </h6>
                         <div class="row">
-                        <div class="col col-3">
-                            <div class="preview"></div>
-                        </div>
+                            <div class="col col-3">
+                                <div class="preview" style="width: 64px; height: 36px;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -110,20 +104,20 @@
                         <div class="row justify-content-center">
                             <div class="col-6">
                                 <div class="row">
-                                    <div class="col-4">
+                                    <!-- <div class="col-4">
                                         <button id="use-picture-button" type="button" class="btn btn-primary btn-block">
                                             <i class="fas fa-images"></i>
                                             Brug Billede
                                         </button>
-                                    </div>
-                                    <div class="col-4">
+                                    </div> -->
+                                    <div class="col-6">
                                         <button id="edit-picture-button" type="button"
                                             class="btn btn-primary btn-block">
                                             <i class="fas fa-images"></i>
                                             Beskær Billed
                                         </button>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <button id="discard-picture-button" type="button"
                                             class="btn btn-danger btn-block">
                                             <i class="fas fa-recycle"></i>
@@ -187,17 +181,15 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
-
+    <script src="./javascript/jquery-3.4.1.js"></script>
+    <script src="./javascript/popper.min.js"></script>
+    <script src="./javascript/bootstrap.min.js"></script>
     <script src="./javascript/cameraSetup.js"></script>
     <script src="./javascript/ajax.js"></script>
-    <script src="./javascript/onClickFunctions.js"></script>
+    <script type="module" src="./javascript/cropperTest.js"></script>
+    <script type="module" src="./javascript/onClickFunctions.js"></script>
     <script src="./javascript/alert.js"></script>
     <script src="./javascript/inputValidation.js"></script>
-    <script type="module" src="./javascript/cropperTest.js"></script>
 
 </body>
 

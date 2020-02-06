@@ -1,28 +1,43 @@
 // Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
-$('#use-picture-button').click(function () {
+function uploadTempImage(cropper) {
   $.ajax({
       type: "POST",
       url: "core/post.php",
       data: {
-        "photo": canvas.toDataURL('image/webp')
+        "photo": cropper.getCroppedCanvas({
+          width: 343,
+          height: 453
+        }).toDataURL("image/webp")
       }
     }).done(function (response) {
 
       if (response.includes(".jpeg")) {
         $(img).attr("src", response);
-        console.log(response);
-        
         alertService("Success : Dit billede er midlertidig gemt.");
-
       } else {
         alertService("Fejl: Billede er ikke den rigtige format.");
-        // console.log(response);
       }
 
     })
     .fail(function () {
       alertService("Server Fejl: Kunne ikke håndtere oprettelse af billede.");
-      // console.log(error);
     });
-});
+}
+
+function saveFinalImage(cprNummer) {
+  $.ajax({
+      type: "POST",
+      url: "core/saveFinalImage.php",
+      data: {
+        "cprNumber":cprNummer
+      }
+    }).done(function (response) {
+
+      console.log(response);
+
+    })
+    .fail(function () {
+      alertService("Server Fejl: Kunne ikke håndtere oprettelse af billede.");
+    });
+}
