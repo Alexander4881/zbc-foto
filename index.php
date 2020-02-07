@@ -154,8 +154,12 @@
                         Som om det var et PAS-foto.
                     </p>
                     <hr>
-                    <p class="mb-0">Vi tillader os ikke at printe ID-kortet, hvis ikke vi synes at billedet er
+                    <p class="mb-0">
+                        Vi tillader os ikke at printe ID-kortet, hvis ikke vi synes at billedet er
                         vellignende nok.
+                    </p>
+                    <p class="mb-0">
+                        Hvis du er navne-beskyttet og/eller adresse beskyttet. Så printer vi ikke dit kort.
                     </p>
                 </div>
             </div>
