@@ -20,15 +20,23 @@ const alert = $('#alert');
 
 function alertService( message ) {
     if(message.includes("Fejl")){
-        alert.empty().append('<div id="Fader" class="alert alert-danger" role="alert">' + message +'</div>');
+        alert.empty().append('<div id="Fader" class="alert alert-danger d-flex align-items-center" role="alert">' + message +'</div>');
         
     }
     else if(message.includes("Success")){
-        alert.empty().append('<div id="Fader" class="alert alert-success" role="alert">' + message +'</div>');
+        alert.empty().append('<div id="Fader" class="alert alert-success d-flex align-items-center" role="alert">' + message +'</div>');
 
     }
     else if(message.includes("Error")){
-        alert.empty().append('<div id="Fader" class="alert alert-danger" role="alert">' + message +'</div>');
+        alert.empty().append('<div id="Fader" class="alert alert-danger d-flex align-items-center" role="alert">' + message +'</div>');
+
+    }
+    else if(message.includes("Warning")){
+        alert.empty().append('<div id="Fader" class="alert alert-warning d-flex align-items-center" role="alert">' + message +'</div>');
+
+    }
+    else{
+        alert.empty().append('<div id="Fader" class="alert alert-info d-flex align-items-center" role="alert">' + message +'</div>');
 
     }
     alert.children().addClass("fadeout");
@@ -39,7 +47,7 @@ function alertService( message ) {
         setTimeout(function(){
             alert.empty();
         },800)
-    },1500);
+    },5000);
 }
 
 function alertAnimation(){

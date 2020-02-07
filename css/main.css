@@ -97,3 +97,52 @@
         transform: translateY(0);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.pulse {
+    display: block;
+    border-radius: 50%;
+    background: rgba(80, 114, 193, 1);
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(139, 184, 217, 0.4);
+    animation: pulse 4s infinite;
+  }
+  .pulse:hover {
+    animation: none;
+  }
+  
+  @-webkit-keyframes pulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(139, 184, 217, 0);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 20px rgba(139, 184, 217, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(139, 184, 217, 0);
+    }
+  }
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(139, 184, 217, 0.4);
+      box-shadow: 0 0 0 0 rgba(139, 184, 217, 0.4);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 20px rgba(139, 184, 217, 0);
+        box-shadow: 0 0 0 20px rgba(139, 184, 217, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(139, 184, 217, 0);
+        box-shadow: 0 0 0 0 rgba(139, 184, 217, 0);
+    }
+  }

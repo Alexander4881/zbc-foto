@@ -13,8 +13,12 @@ function uploadTempImage(cropper) {
     }).done(function (response) {
 
       if (response.includes(".jpg")) {
-        $(croppedImg).attr("src", response);        
-        alertService("Success : Dit billede er midlertidig gemt.");
+        
+        $(croppedImg).attr("src", response);
+
+        //console.log("test");
+        alertService("Warning : Dit billede er midlertidig gemt.");
+
       } else {
         alertService("Fejl: Billede er ikke den rigtige format.");
       }
@@ -33,7 +37,7 @@ function saveFinalImage(cprNummer) {
         "cprNumber":cprNummer
       }
     }).done(function (response) {
-
+      alertService("Success : Billedet er blevt gemt.");
       setTimeout(function(){
         location.reload();
       },4000);

@@ -27,7 +27,7 @@
         </div>
 
         <!-- Alerts -->
-        <span id="alert"></span>
+        <div id="alert" style="height:66px; width:100%;"></div>
 
         <!-- Image Elements Container -->
         <div class="row mt-1">
@@ -37,14 +37,14 @@
             <div id="elements" class="col-8">
                 <!-- Preparing Picture Taking | Video by WebCam -->
                 <div id="screenshot">
-                    <video class="videostream" autoplay="">
+                    <video class="videostream rounded" autoplay="">
 
                     </video>
                 </div>
 
                 <!-- Temp Image Container -->
                 <div id="image" class="hide">
-                    <img id="cropperImg" src="">
+                    <img id="cropperImg" class="rounded" src="">
                 </div>
             </div>
 
@@ -90,19 +90,6 @@
                                 <div class="preview" style="width: 100%; height: auto;"></div>
                             </div>
                         </div>
-
-                        <!-- <h5 class="card-title">Medarbejder Status</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">
-                            <strong>ZBC</strong>
-                            <strong>Z</strong>ealand
-                            <strong>B</strong>usiness
-                            <strong>C</strong>ollege
-                        </h6>
-                        <div class="row">
-                            <div class="col col-3">
-                                <div class="preview" style="width: 64px; height: 36px;"></div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -112,7 +99,7 @@
         <div class="row mt-1">
             <div class="col-12">
                 <div id="croppedImage" class="mx-auto text-center hide">
-                    <img id="finalImage" src="">
+                    <img id="finalImage" class="rounded" src="">
                 </div>
             </div>
         </div>
@@ -153,12 +140,6 @@
                         <div class="row justify-content-center">
                             <div class="col-6">
                                 <div class="row">
-                                    <!-- <div class="col-4">
-                                        <button id="use-picture-button" type="button" class="btn btn-primary btn-block">
-                                            <i class="fas fa-images"></i>
-                                            Brug Billede
-                                        </button>
-                                    </div> -->
                                     <div class="col-6">
                                         <button id="edit-picture-button" type="button"
                                             class="btn btn-primary btn-block">
@@ -208,7 +189,7 @@
         <!-- ReadMe Note -->
         <div class="row mt-3">
             <div class="col">
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-info pulse" role="alert">
                     <h4 class="alert-heading">Disclaimer!</h4>
                     <p>
                         Når du uploader/afgiver dit billede, acceptere du samtidig at vi (ZBC) må bruge dette internt i

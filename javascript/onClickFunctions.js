@@ -70,13 +70,12 @@ $('#use-edited-picture-button').click(function () {
 });
 
 $('#save-picture-button').click(function () {
-    alertService('Success : Gemmer Billed...<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
+    alertService('Success : Gemmer Billed...<div class="spinner-border ml-auto" role="status"><span class="sr-only">Loading...</span></div>');
     saveFinalImage($('#validationServerCprNumber').val());
 });
 
 // remove hide class or add show class
 function ChangeContainerState(container, state) {
-    console.info(`Changed State of ${container} to ${Boolean(state)}.`);
     if (Boolean(state) === true) {
         $(container).addClass("show");
         $(container).removeClass("hide");
