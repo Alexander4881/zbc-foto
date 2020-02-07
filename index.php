@@ -32,8 +32,6 @@
         <!-- Image Elements Container -->
         <div class="row mt-1">
 
-            <!-- <div class="col-3"></div> -->
-
             <div id="elements" class="col-8">
                 <!-- Preparing Picture Taking | Video by WebCam -->
                 <div id="screenshot">
@@ -55,12 +53,12 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="text-center">
-                                    <h5 class="card-title">
-                                        Studiekort
-                                    </h5>
+                                    <h6 class="card-title">
+                                        Studiekort / Student Card
+                                    </h6>
                                     <h6 class="card-subtitle mb-2 text-muted">
                                         <strong>ZBC</strong>
-                                        <strong>R</strong>ingsted
+                                        <strong>L</strong>okation
                                     </h6>
                                 </div>
 
@@ -72,10 +70,10 @@
 
                                 <p class="card-text">
                                     <small class="text-muted d-block">
-                                        Date of Birth : 01.01.1995
+                                        Date of Birth : 01.01.1971
                                     </small>
                                     <small class="text-muted d-block">
-                                        Expirary Date : 11.10.2025
+                                        Expirary Date : 11.10.2099
                                     </small>
                                 </p>
 
