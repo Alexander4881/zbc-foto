@@ -31,8 +31,7 @@
 
         <!-- Image Elements Container -->
         <div class="row mt-1">
-
-            <div id="elements" class="col-8">
+            <div id="elements" class="col-12 text-center">
                 <!-- Preparing Picture Taking | Video by WebCam -->
                 <div id="screenshot">
                     <video class="videostream rounded" autoplay="">
@@ -43,52 +42,6 @@
                 <!-- Temp Image Container -->
                 <div id="image" class="hide">
                     <img id="cropperImg" class="rounded" src="">
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div id="preview-card" class="card justify-content-center hide">
-                    <div class="card-body">
-
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="text-center">
-                                    <h6 class="card-title">
-                                        Studiekort / Student Card
-                                    </h6>
-                                    <h6 class="card-subtitle mb-2 text-muted">
-                                        <strong>ZBC</strong>
-                                        <strong>L</strong>okation
-                                    </h6>
-                                </div>
-
-                                <hr>
-
-                                <p class="card-text">
-                                    Preview Studiekort
-                                </p>
-
-                                <p class="card-text">
-                                    <small class="text-muted d-block">
-                                        Date of Birth : 01.01.1971
-                                    </small>
-                                    <small class="text-muted d-block">
-                                        Expirary Date : 11.10.2099
-                                    </small>
-                                </p>
-
-                            </div>
-
-                            <div class="col-4">
-
-                                <div class="mb-2">
-                                    <img src="./assets/zbc_black.jpg" class="card-img" alt="ZBC Preview Card Logo">
-                                </div>
-
-                                <div class="preview" style="width: 100%; height: auto;"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -208,7 +161,6 @@
             </div>
         </div>
     </div>
-
     <script src="./javascript/jquery-3.4.1.js"></script>
     <script src="./javascript/popper.min.js"></script>
     <script src="./javascript/bootstrap.min.js"></script>
@@ -218,7 +170,5 @@
     <script type="module" src="./javascript/onClickFunctions.js"></script>
     <script src="./javascript/alert.js"></script>
     <script src="./javascript/inputValidation.js"></script>
-
 </body>
-
 </html>
