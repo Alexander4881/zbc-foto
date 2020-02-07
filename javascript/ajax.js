@@ -16,7 +16,6 @@ function uploadTempImage(cropper) {
         
         $(croppedImg).attr("src", response);
 
-        //console.log("test");
         alertService("Warning : Dit billede er midlertidig gemt.");
 
       } else {
@@ -38,6 +37,7 @@ function saveFinalImage(cprNummer) {
       }
     }).done(function (response) {
       alertService("Success : Billedet er blevt gemt.");
+      
       setTimeout(function(){
         location.reload();
       },4000);

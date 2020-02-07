@@ -2,7 +2,6 @@
 $tempImageFolder = "../temp/";
 $finalImageDestinationFolder = "C:/Photos/";
 
-
 if (session_status() !== PHP_SESSION_ACTIVE) 
 {
     session_start();

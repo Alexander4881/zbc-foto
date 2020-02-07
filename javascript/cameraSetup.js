@@ -31,7 +31,7 @@ if (navigator.mediaDevices.getUserMedia === undefined) {
 }
 
 navigator.mediaDevices.getUserMedia({
-        audio: true,
+        audio: false,
         video: true
     })
     .then(function (stream) {
