@@ -69,8 +69,9 @@
                                             <i class="fas fa-key"></i>
                                         </span>
                                     </div>
-                                    <input type="text" class="form-control is-invalid" id="validationServerCprNumber"
+                                    <input type="number" class="form-control is-invalid" id="validationServerCprNumber"
                                         placeholder="CPR-Nummer" aria-describedby="inputGroupCprNumber" maxlength="10"
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                         required>
                                     <div class="invalid-feedback">
                                         Venligst udfyld cpr-nummer.
