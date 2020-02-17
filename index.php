@@ -168,7 +168,21 @@
         </div>
     </div>
     
+    
+
     <script src="./javascript/jquery-3.4.1.js"></script>
+    <script>
+    
+        console.log("test");
+        $("body").append('<div id="loadingBox" class="w-100 h-100 position-fixed my-auto mx-auto" style="top:0;left:0;"><div class="row h-100 w-100 m-0"><div class="col-sm-12 h-100 d-table p-0"><div class="card card-block d-table-cell align-middle border-0 text-center"><div class="spinner-grow text-dark" role="status"><span class="sr-only">Loading...</span></div> <p>Loading<span id="loading"></span></p> </div></div></div>    </div>');
+        let loading = ".";
+        var loadingTimer = setInterval(() => {
+            $("#loading").html(loading);
+            loading += '.';
+            if(loading.length == 5)
+                loading = '';
+        }, 800);
+    </script>
     <script src="./javascript/popper.min.js"></script>
     <script src="./javascript/bootstrap.min.js"></script>
     <script src="./javascript/cameraSetup.js"></script>
