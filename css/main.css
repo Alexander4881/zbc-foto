@@ -11,36 +11,9 @@
 #logo {
     max-width: 25% !important;
 }
-
-/* .video-container {
-    width: 343px;
-    height: 454px;
-    margin: 0;
-    overflow: hidden;
-} */
-
-/* .video-container>video {
-    width: 100% !important;
-    height: auto !important;
-    z-index: -1;
-} */
-.preview{
-    overflow: hidden;
+.custom-image-width {
+    max-width: 500px !important;
 }
-
-/* .videoWrapper {
-    width: 343px;
-    height: 454px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.videoWrapper video,
-.videoWrapper img {
-    width: 343px;
-    height: 454px;
-    object-fit: cover;
-} */
 
 @supports (-ms-ime-align:auto) {  
     .videoWrapper {
