@@ -71,6 +71,9 @@ $('#use-edited-picture-button').click(function () {
 
 $('#save-picture-button').click(function () {
     alertService('Success : Gemmer Billedet.. <div class="spinner-border ml-auto" role="status"><span class="sr-only">Loading...</span></div>');
+    
+    $('#save-picture-button').html('<div class="spinner-border spinner-border-sm ml-auto" role="status"><span class="sr-only">Loading...</span></div>');
+    $('#save-picture-button').attr("disabled", true);
     saveFinalImage($('#validationServerCprNumber').val());
 });
 
