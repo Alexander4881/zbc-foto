@@ -34,14 +34,14 @@
             <div id="elements" class="col-12 text-center">
                 <!-- Preparing Picture Taking | Video by WebCam -->
                 <div id="screenshot">
-                    <video class="videostream rounded" autoplay="">
+                    <video class="videostream w-100 rounded" autoplay="">
 
                     </video>
                 </div>
 
                 <!-- Temp Image Container -->
                 <div id="image" class="hide">
-                    <img id="cropperImg" class="rounded" src="">
+                    <img id="cropperImg" class="rounded w-100" src="">
                 </div>
             </div>
         </div>
