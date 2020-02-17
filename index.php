@@ -60,12 +60,14 @@
             <div class="col">
                 <div id="containers" class="row mx-auto text-center">
 
-                    <div id="save-picture-container" class="col-lg-12 col-md-8 col-sm-6 mb-3 hide">
+                    <div id="save-picture-container" class="col-lg-12 col-md-12 col-sm-12 mb-3 hide">
                         <div class="row justify-content-center">
                             <div class="col-6">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupCprNumber">@</span>
+                                        <span class="input-group-text" id="inputGroupCprNumber">
+                                            <i class="fas fa-key"></i>
+                                        </span>
                                     </div>
                                     <input type="text" class="form-control is-invalid" id="validationServerCprNumber"
                                         placeholder="CPR-Nummer" aria-describedby="inputGroupCprNumber" maxlength="10"
@@ -87,7 +89,7 @@
                         </div>
                     </div>
 
-                    <div id="controls-picture-container" class="col-lg-12 col-md-8 col-sm-6 mb-3 hide">
+                    <div id="controls-picture-container" class="col-lg-12 col-md-12 col-sm-12 mb-3 hide">
                         <div class="row justify-content-center">
                             <div class="col-6">
                                 <div class="row">
@@ -110,7 +112,7 @@
                         </div>
                     </div>
 
-                    <div id="edit-picture-container" class="col-lg-12 col-md-8 col-sm-6 mb-3 hide">
+                    <div id="edit-picture-container" class="col-lg-12 col-md-12 col-sm-12 mb-3 hide">
                         <!-- Take Picture of Current View -->
                         <div class="row justify-content-center">
                             <div class="col-6">
@@ -122,7 +124,7 @@
                         </div>
                     </div>
 
-                    <div id="take-picture-container" class="col-lg-12 col-md-8 col-sm-6 mb-3">
+                    <div id="take-picture-container" class="col-lg-12 col-md-12 col-sm-12 mb-3">
                         <!-- Take Picture of Current View -->
                         <div class="row justify-content-center">
                             <div class="col-6">

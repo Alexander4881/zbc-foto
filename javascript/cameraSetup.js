@@ -6,6 +6,7 @@ const croppedImg = document.querySelector('#croppedImage img');
 // Older browsers might not implement mediaDevices at all, so we set an empty object first
 if (navigator.mediaDevices === undefined) {
     navigator.mediaDevices = {};
+    alert("Denne browser er ikke undestøttet \nDu kan bruge Firefox, Chrome, Microsoft Edge & Opera");
 }
 
 // Some browsers partially implement mediaDevices. We can't just assign an object
@@ -47,7 +48,8 @@ navigator.mediaDevices.getUserMedia({
         };
     })
     .catch(function (err) {
-        var errorMessage = `${err.name} : ${err.message}`;
+        // var errorMessage = `${err.name} : ${err.message}`;
+        var errorMessage = err.name + " " + err.message;
         alertService(String(errorMessage));
     });
 
