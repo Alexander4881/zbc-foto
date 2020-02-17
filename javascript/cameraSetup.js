@@ -58,9 +58,3 @@ takePictureButton.onclick = video.onclick = function () {
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0);
 };
-
-// todo fiks first loaded image
-// todo fiks image border show full image
-// todo check upload renaming of file on server
-// todo css nedds to be pritty
-// todo unitest.......

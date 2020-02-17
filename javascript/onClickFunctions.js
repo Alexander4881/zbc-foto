@@ -70,7 +70,7 @@ $('#use-edited-picture-button').click(function () {
 });
 
 $('#save-picture-button').click(function () {
-    alertService('Success : Gemmer Billed...<div class="spinner-border ml-auto" role="status"><span class="sr-only">Loading...</span></div>');
+    alertService('Success : Gemmer Billedet.. <div class="spinner-border ml-auto" role="status"><span class="sr-only">Loading...</span></div>');
     saveFinalImage($('#validationServerCprNumber').val());
 });
 

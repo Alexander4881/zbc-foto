@@ -28,6 +28,7 @@ function uploadTempImage(cropper) {
     });
 }
 
+// Save the Final Image, renamed with the coresponding CPR-Number.
 function saveFinalImage(cprNummer) {
   $.ajax({
       type: "POST",
@@ -36,7 +37,7 @@ function saveFinalImage(cprNummer) {
         "cprNumber":cprNummer
       }
     }).done(function (response) {
-      alertService("Success : Billedet er blevt gemt.");
+      alertService("Success : Billedet er blevet gemt.");
       
       setTimeout(function(){
         location.reload();

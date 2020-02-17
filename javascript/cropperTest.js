@@ -1,3 +1,4 @@
+// Import Cropper Module
 import './cropper.min.js';
 
 function each(arr, callback) {
@@ -61,6 +62,7 @@ function instantiateCrop() {
     }
 }
 
+// Export Functions for Files who needs this module.
 export {
     instantiateCrop,
     cropper

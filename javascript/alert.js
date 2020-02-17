@@ -1,20 +1,18 @@
-// function alertService( message ) {
-//     $.ajax({
-//         type: "POST",
-//         url: "../core/alertService.php",
-//         data: {
-//             "alert": message
-//         }
-//     }).done( function( response ) {
-//         if (response == "") {
-//             console.info("Alert Response is empty.");
-//             return;
-//         }
-//         console.log(response);
-//     }).fail( function( xhr, textStatus, errorThrown ) {
-//         console.error( `Alert Service Data Error | Status: ${xhr.statusText} { ${textStatus} ~ ${errorThrown} }` );
-//     });
-// }
+/*
+    ############# ALERT SERVICE #############
+
+    This javascript, handles a basic alert and checks for what it contains.
+    Alerts Accepted :
+        * Fejl
+        * Success
+        * Error
+        * Warning
+    If none of these are provided in the message,
+    the service takes it as just an info message.
+
+    Every Alert should disappear after 5000 miliseconds / 5 seconds.
+    And after the timeout, the container get's set to empty after 800 miliseconds / 0.8 seconds.
+*/
 
 const alert = $('#alert');
 

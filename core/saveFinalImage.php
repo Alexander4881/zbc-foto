@@ -1,14 +1,13 @@
 <?php
-include("globalVars.php");
+    // Includes GlobalVars to get the SESSION Information.
+    include("globalVars.php");
 
-if(isset($_SESSION['tempFileName']) && isset($_POST['cprNumber'])){
-    if (file_exists($_SESSION['tempFileName'])) {
-
-        exec("net use P: \\\zbc-fil.efif.dk\Gruppe\Fotoautomat\Billeder /user:efif\zbc-service dild3and46");
-
-        rename($_SESSION['tempFileName'], "P:" . $_POST['cprNumber'] . '.jpg');
-
-        exec("net use /delete P:");
+    // Check if SESSION TempFileName AND CPR-Number isset for any values.
+    if(isset($_SESSION['tempFileName']) && isset($_POST['cprNumber'])){
+        // Check if there is any files currently existing with the SESSION Name
+        if (file_exists($_SESSION['tempFileName'])) {
+            // Rename the existing file, to the new coresponding file name.
+            rename($_SESSION['tempFileName'], $finalImageDestinationFolder . $_POST['cprNumber'] . '.jpg');
+        }
     }
-}
 ?>
