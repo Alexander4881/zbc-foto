@@ -39,6 +39,7 @@ if (isset($_POST["photo"])) {
 
     // Create a decoded image from the base64 image.
     $imageBase64String = base64_decode($imageBase64String);
+
     $im = imagecreatefromstring($imageBase64String);
 
     // Check if the value isn't false.
@@ -53,11 +54,11 @@ if (isset($_POST["photo"])) {
         imagedestroy($im);  
     }
     else {
-        echo "Post Not Set";
+        echo $im;
     }
 }
 else {
-	echo "POST not set";
+	echo "photo wasn't set.";
 }
 
 ?>

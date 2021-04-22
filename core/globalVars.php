@@ -1,4 +1,4 @@
-<?php  
+<?php
     // Assing some global variables
     $tempImageFolder = "../temp/";
     $finalImageDestinationFolder = "C:/Photos/";

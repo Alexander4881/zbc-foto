@@ -4,7 +4,7 @@ const img = document.querySelector('#image img');
 const croppedImg = document.querySelector('#croppedImage img');
 
 // Prefer camera resolution nearest to 1280x720.
-const userMediaContraints = { audio: false, video: { width: 1280, height: 720 } };
+const userMediaContraints = { audio: false, video: true };
 
 navigator.mediaDevices.getUserMedia(userMediaContraints)
     .then(function(mediaStream) {

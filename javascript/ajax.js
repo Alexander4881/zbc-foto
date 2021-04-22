@@ -1,16 +1,21 @@
 // Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
 function uploadTempImage(cropper) {
+  data = cropper.getCroppedCanvas({
+    width: 343,
+    height: 453
+  }).toDataURL("image/png");
+
+  console.log(data);
+
   $.ajax({
       type: "POST",
       url: "core/post.php",
       data: {
-        "photo": cropper.getCroppedCanvas({
-          width: 343,
-          height: 453
-        }).toDataURL("image/png")
+        "photo":data
       }
     }).done(function (response) {
+      console.log(response);
 
       if (response.includes(".jpg")) {
         
@@ -19,12 +24,13 @@ function uploadTempImage(cropper) {
         alertService("Warning : Dit billede er midlertidig gemt.");
 
       } else {
+        console.log(response)
         alertService("Fejl: Billede er ikke den rigtige format.");
       }
 
     })
-    .fail(function () {
-      alertService("Server Fejl: Kunne ikke håndtere oprettelse af billede.");
+    .fail(function (fail) {
+      alertService(fail);
     });
 }
 
@@ -45,6 +51,6 @@ function saveFinalImage(cprNummer) {
 
     })
     .fail(function () {
-      alertService("Server Fejl: Kunne ikke håndtere oprettelse af billede.");
+      alertService("Server Fejl: Kunne ikke håndtere oprettelse af det endelige billede.");
     });
 }
